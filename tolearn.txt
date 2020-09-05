@@ -1,1 +1,29 @@
-pub sub
+reference/value 
+OK
+
+
+
+Debounce
+
+<input type="text" onKeyUp={debounce(keyUpEvent))} />
+
+const debounce = (func,timer) => {
+  let timeId = null
+  return (...args) {
+    if(timeId){
+      clearTimeout(timeId)
+    }
+    timeId = setTimeout(()=>{
+      func(...args)
+    },500}
+  }
+}
+
+const keyUpEvent = ev => {
+  const textInput = ev.target.value
+  debounce(this.setState({textInput})
+}
+
+
+
+pub subs
