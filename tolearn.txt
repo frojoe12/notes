@@ -5,16 +5,16 @@ OK
 
 Debounce
 
-<input type="text" onKeyUp={debounce(keyUpEvent))} />
+<input type="text" onKeyUp={keyUpEvent} />
 
-const debounce = (func,timer) => {
+const debounce = (func) => {
   let timeId = null
-  return (...args) {
+  return {
     if(timeId){
       clearTimeout(timeId)
     }
     timeId = setTimeout(()=>{
-      func(...args)
+      func()
     },500}
   }
 }
