@@ -9,12 +9,12 @@ Debounce
 
 const debounce = (func) => {
   let timeId = null
-  return {
+  return(...args) {
     if(timeId){
       clearTimeout(timeId)
     }
     timeId = setTimeout(()=>{
-      func()
+      func(...args)
     },500}
   }
 }
